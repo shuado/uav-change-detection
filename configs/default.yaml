@@ -1,0 +1,56 @@
+# 系统配置文件
+
+# 模型配置
+model:
+  name: segformer  # segformer, unet, deeplabv3
+  backbone: mit-b2  # MiT backbone (b0-b5)
+  checkpoint: null  # 模型权重文件路径（可选）
+  confidence_threshold: 0.7  # 置信度阈值
+  device: cuda  # cuda, cpu
+  batch_size: 4
+  num_workers: 4
+
+# 处理配置
+processing:
+  tile_size: 512  # 切片大小（像素）
+  overlap: 64  # 重叠区域（像素）
+  min_polygon_area: 100.0  # 最小图斑面积（平方米）
+  simplify_tolerance: 1.0  # 多边形简化容差（米）
+  target_crs: "EPSG:4326"  # 目标坐标系（WGS84）
+
+# API服务配置
+api:
+  host: "0.0.0.0"
+  port: 8000
+  workers: 4
+  max_upload_size: 524288000  # 500MB
+  task_timeout: 3600  # 1小时
+  result_expire_days: 7
+
+# 存储配置
+storage:
+  data_dir: "./data"
+  results_dir: "./results"
+  models_dir: "./models"
+  temp_dir: "./temp"
+
+# 地物类别定义
+land_cover_classes:
+  0:
+    name: "背景"
+    color: "#000000"
+  1:
+    name: "林地"
+    color: "#228B22"
+  2:
+    name: "草地"
+    color: "#90EE90"
+  3:
+    name: "水域"
+    color: "#1E90FF"
+  4:
+    name: "道路"
+    color: "#696969"
+  5:
+    name: "建筑"
+    color: "#FF6347"
