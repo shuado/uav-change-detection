@@ -1,0 +1,48 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+venv/
+env/
+ENV/
+.venv
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# Jupyter
+.ipynb_checkpoints/
+
+# 数据和模型（不上传）
+data/raw/
+data/processed/
+data/labels/
+outputs/models/
+*.tif
+*.tiff
+*.png
+*.jpg
+*.pth
+*.pt
+*.onnx
+
+# 日志和临时文件
+*.log
+*.tmp
+.DS_Store
+
+# 测试
+.pytest_cache/
+.coverage
+htmlcov/
+
+# 构建
+dist/
+build/
+*.egg-info/
